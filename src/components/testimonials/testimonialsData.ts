@@ -11,9 +11,9 @@ export const testimonials: Testimonial[] = [
     memoryLabel: "Hager & me at Femi Tech",
   },
   {
-    name: "lorem ipsum",
-    role: "lorem ipsum",
+    name: "Hager Hamdy",
+    role: "Route’s Front-End Mentor",
     quote:
-      "lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum",
+      "One of the most committed students I’ve had the pleasure of teaching. You were always consistent, dedicated to completing every task, and often went beyond what was expected, especially when it came to design. Your work is always polished, clean, and professional, with great attention to detail. It has been truly rewarding to see your progress and dedication throughout the learning journey. I’m genuinely proud of you and everything you’ve accomplished. Keep up the great work, keep learning, and always maintain this level of dedication and professionalism. Wishing you continued success! 🌟",
   },
 ];
