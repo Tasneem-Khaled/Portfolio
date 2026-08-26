@@ -17,7 +17,7 @@ export default function TestimonialCarousel() {
         stopOnInteraction: false,
         stopOnMouseEnter: true,
       }),
-    ],
+    ]
   );
 
   const [selectedIndex, setSelectedIndex] = useState(0);
@@ -26,7 +26,7 @@ export default function TestimonialCarousel() {
     (index: number) => {
       emblaApi?.scrollTo(index);
     },
-    [emblaApi],
+    [emblaApi]
   );
 
   const onSelect = useCallback(() => {
@@ -53,29 +53,24 @@ export default function TestimonialCarousel() {
         ref={emblaRef}
         className="cursor-grab overflow-hidden active:cursor-grabbing"
       >
-        <div className="flex touch-pan-y">
-          {testimonials.map((testimonial, index) => (
-            <div key={testimonial.name} className="min-w-0 flex-[0_0_100%]">
-              <article
-                className={`relative overflow-hidden rounded-[28px] border border-[#B5AA98]/20 bg-[#F7F2EA]/55 p-5 sm:p-6 ${
-                  index === 1 ? "flex h-full flex-col" : ""
-                }`}
-              >
+        <div className="flex touch-pan-y items-stretch">
+          {testimonials.map((testimonial) => (
+            <div
+              key={testimonial.name}
+              className="flex min-w-0 flex-[0_0_100%]"
+            >
+              <article className="flex w-full flex-col overflow-hidden rounded-[28px] border border-[#B5AA98]/20 bg-[#F7F2EA]/55 p-5 sm:p-6">
                 <Quote
                   size={24}
                   strokeWidth={1.2}
-                  className="mb-3 text-[#77744B]"
+                  className="mb-3 shrink-0 text-[#77744B]"
                 />
 
-                <p
-                  className={` text-[#11191E]/72  ${
-                    index === 1 ? "flex flex-1 text-[15px] items-center px-10 leading-loose" : "text-[12px] leading-[1.75] sm:text-[13px]"
-                  }`}
-                >
+                <p className="text-[12px] leading-[1.65] text-[#11191E]/72 sm:text-[13px]">
                   {testimonial.quote}
                 </p>
 
-                <div className="mt-4">
+                <div className="mt-4 shrink-0">
                   <h3 className="text-[13px] font-semibold text-[#11191E]">
                     {testimonial.name}
                   </h3>
@@ -86,12 +81,14 @@ export default function TestimonialCarousel() {
                 </div>
 
                 {testimonial.memoryImage && (
-                  <div className="relative mt-5">
-                    <img
-                      src={testimonial.memoryImage}
-                      alt={testimonial.memoryLabel ?? testimonial.name}
-                      className="mx-auto block w-full max-w-90 object-contain [clip-path:polygon(0_0,90%_0,100%_18%,100%_100%,10%_100%,0_82%)]"
-                    />
+                  <div className="mt-auto pt-5">
+                    <div className="mx-auto aspect-16/10 w-full max-w-90 overflow-hidden [clip-path:polygon(0_0,90%_0,100%_18%,100%_100%,10%_100%,0_82%)]">
+                      <img
+                        src={testimonial.memoryImage}
+                        alt={testimonial.memoryLabel ?? testimonial.name}
+                        className="h-full w-full object-cover object-center"
+                      />
+                    </div>
 
                     {testimonial.memoryLabel && (
                       <span className="mt-2 block text-center text-[9px] italic text-[#11191E]/55">

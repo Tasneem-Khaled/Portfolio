@@ -115,13 +115,11 @@ export default function Navbar() {
     setHidden(false);
     setActiveSection(href.slice(1));
 
-    const navHeight = navRef.current?.offsetHeight ?? 80;
-    const extraSpace = 20;
+    const extraSpace = 45;
 
     const targetPosition =
       target.getBoundingClientRect().top +
       window.scrollY -
-      navHeight -
       extraSpace;
 
     window.scrollTo({
@@ -151,8 +149,8 @@ export default function Navbar() {
             scrollToSection("#home");
           }}
           className="flex items-center text-[#555334]">
-          <svg
-            width="58" height="45" viewBox="0 0 58 45" fill="none"
+          <svg className="w-12 h-8 md:w-14.5 md:11.25"
+            viewBox="0 0 58 45" fill="none"
             xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
             <path
               d="M4 6H29 M16.5 6V39"
